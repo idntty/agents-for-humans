@@ -1,0 +1,182 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>Ninebark Labs — where the deal stands</title>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<!--
+  Written by the agent to its own address, and read straight back from it. status.json
+  sits in this same directory and the agent's harness rewrites it as the negotiation
+  moves, so this page needs no server, no build and no key.
+
+  It is one side's page. Ninebark has no way to see Varlow's — the tool that reads a site
+  checks who owns it, and the tool that could pull down someone else's page was left out
+  of this agent's kit on purpose. What a person reading both pages can see, neither agent
+  can.
+-->
+<style>
+  :root{
+    --paper:#fbf9f4; --card:#fff; --ink:#221f1a; --soft:#6f675c; --faint:#9a9184;
+    --rule:#e4ded1; --go:#2f6b46; --hold:#9a6a1c; --gone:#9c3b32; --link:#7a4a1f;
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --paper:#14120f; --card:#1c1917; --ink:#efe9df; --soft:#9c9285; --faint:#7c7365;
+    --rule:#2e2a25; --go:#63b184; --hold:#d3a44f; --gone:#dd7c72; --link:#d0a06a;
+  }}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+       font:16px/1.65 Georgia,"Iowan Old Style",Cambria,serif}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px 80px}
+  header{position:sticky;top:0;background:var(--paper);padding:26px 0 16px;
+         border-bottom:1px solid var(--rule);z-index:5}
+  h1{margin:0;font-size:29px;font-weight:normal;letter-spacing:-.015em}
+  .sub{color:var(--soft);font-size:14.5px;font-style:italic;margin-top:4px}
+  .strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px;
+         font-family:ui-sans-serif,system-ui,sans-serif}
+  .chip{border:1px solid var(--rule);background:var(--card);border-radius:3px;
+        padding:4px 9px;font-size:11.5px;color:var(--soft);white-space:nowrap}
+  .chip b{color:var(--ink);font-weight:600}
+  .doing{display:flex;gap:11px;align-items:baseline;margin-top:15px;font-size:21px}
+  .mark{width:10px;height:10px;border-radius:50%;background:var(--go);flex:none;
+        transform:translateY(-3px);animation:b 2s ease-in-out infinite}
+  @keyframes b{0%,100%{opacity:1}50%{opacity:.25}}
+  .off .mark{background:var(--gone);animation:none}
+  .off .doing{color:var(--gone)}
+  .why{color:var(--soft);font-size:14px;margin-top:3px}
+  .tally{display:flex;flex-wrap:wrap;gap:28px;margin-top:16px}
+  .tally div b{display:block;font-size:25px;font-weight:normal;line-height:1.1}
+  .tally div span{font-size:12px;color:var(--faint);font-style:italic}
+  h2{font-size:14.5px;font-weight:normal;font-style:italic;color:var(--soft);
+     margin:32px 0 10px}
+  .pos{background:var(--card);border:1px solid var(--rule);border-radius:5px;
+       padding:17px 19px}
+  .pos .sealed{color:var(--soft);font-size:14px}
+  .pos code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;
+            color:var(--hold);word-break:break-all}
+  .pos pre{margin:0;white-space:pre-wrap;font:15px/1.7 Georgia,Cambria,serif;
+           max-height:340px;overflow:auto}
+  .turn{margin:0 0 30px;padding-left:18px;border-left:2px solid var(--rule)}
+  .who{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);
+       margin-bottom:9px;font-family:ui-sans-serif,system-ui,sans-serif}
+  .who b{font-weight:600;color:var(--ink)}
+  .who b.private{color:var(--hold)}
+  .part{margin-bottom:12px}
+  .cap{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);
+       margin-bottom:4px;font-family:ui-sans-serif,system-ui,sans-serif}
+  .heard{background:var(--card);border:1px solid var(--rule);border-radius:4px;
+         padding:11px 14px;white-space:pre-wrap;font-size:15px}
+  .heard .from{display:block;font-style:italic;color:var(--hold);margin-bottom:4px;
+               font-size:13.5px}
+  .mind{font-style:italic;color:var(--soft);white-space:pre-wrap;font-size:15px}
+  .mind.nosum{color:var(--faint);font-size:13.5px}
+  .mouth{white-space:pre-wrap}
+  .mouth.none{font-style:italic;color:var(--soft)}
+  footer{margin-top:36px;font-size:12.5px;color:var(--faint);line-height:1.8}
+  a{color:var(--link)}
+</style>
+<div class=wrap>
+  <header>
+    <h1>Ninebark Labs</h1>
+    <div class=sub>Selling side — six people and a document-parsing engine</div>
+    <div class=strip id=strip></div>
+    <div class=doing><span class=mark></span><span id=doing>no word yet</span></div>
+    <div class=why id=why>Nothing has been published to this address so far.</div>
+    <div class=tally>
+      <div><b id=t-turns>—</b><span>turns</span></div>
+      <div><b id=t-spoke>—</b><span>messages sent</span></div>
+      <div><b id=t-silent>—</b><span>times it held its tongue</span></div>
+      <div><b id=t-chars>—</b><span>characters</span></div>
+    </div>
+  </header>
+
+  <h2 id=pos-h>The instruction it was given</h2>
+  <div class=pos id=pos>
+    <div class=sealed>Sealed before a word was said. The hash stands here while the
+      negotiation runs; the instruction itself goes up when it ends and both sides are
+      opened.</div>
+  </div>
+
+  <h2>What it heard, what it weighed, and the words it chose</h2>
+  <div id=turns></div>
+
+  <footer>
+    If the agent has chosen to keep an account of the deal in its own words, it is at
+    <a href="log.md">log.md</a>. Nothing obliges it to.<br>
+    The other side keeps its own page at its own address. This agent cannot read it, and
+    it cannot read this one.
+  </footer>
+</div>
+<script>
+// idntty serves a site at /<slug> with no trailing slash and no redirect, so a bare
+// relative fetch would resolve to /status.json at the domain root. Work the directory
+// out from the path instead.
+const HERE = (() => {
+  const p = location.pathname;
+  if (p.endsWith("/")) return p;
+  return /\.[a-z0-9]+$/i.test(p) ? p.replace(/[^/]*$/, "") : p + "/";
+})();
+const el = (id) => document.getElementById(id);
+const hhmm = (t) => new Date(t * 1000).toLocaleTimeString([], {hour12:false});
+const safe = (t) => (t || "").replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+
+function chips(s){
+  const bits = [["host", s.runtime], ["sdk", s.sdk],
+                ["model", (s.model||"").split("/").pop()], ["scenario", s.scenario]];
+  el("strip").innerHTML = bits.filter(b => b[1])
+    .map(([k, v]) => `<span class=chip>${k} <b>${safe(v)}</b></span>`).join("");
+}
+
+function instruction(s){
+  if (s.position){
+    el("pos-h").textContent = "The instruction it was given — opened";
+    el("pos").innerHTML = `<pre>${safe(s.position)}</pre>`;
+  } else if (s.seal){
+    el("pos").innerHTML = `<div class=sealed>Sealed before a word was said, and posted in
+      the room so that it cannot be edited afterwards to fit the outcome. It goes up here
+      when the negotiation ends.<div style="margin-top:9px"><code>sha256
+      ${safe(s.seal)}</code></div></div>`;
+  }
+}
+
+function spoken(list){
+  if (!list.length) return;
+  // Latest at the top. Someone watching this live should not have to scroll to find
+  // what just happened.
+  el("turns").innerHTML = list.slice().reverse().map(k => `
+    <div class=turn>
+      <div class=who><b class="${k.room||""}">${safe(k.room)||"—"} room</b> · ${hhmm(k.t)}</div>
+      ${(k.heard||[]).map(h => `<div class=part><div class=cap>heard</div>
+        <div class=heard><span class=from>${safe(h.from)} wrote</span>${safe(h.text)}</div></div>`).join("")}
+      <div class=part><div class=cap>weighed</div>
+        <div class="mind${k.thought ? "" : " nosum"}">${k.thought ? safe(k.thought)
+          : "It reasoned before answering, but the provider returned no summary of that reasoning for this turn — it does so for about one turn in three. Nothing here is reconstructed."}</div></div>
+      <div class=part><div class=cap>${k.silent ? "chose" : "said"}</div>
+        <div class="mouth${k.silent ? " none" : ""}">${k.silent
+          ? "Nothing. It read the room and sent no message."
+          : safe(k.said)}</div></div>
+    </div>`).join("");
+}
+
+function render(s){
+  chips(s); instruction(s); spoken(s.takes || []);
+  const age = Math.floor(Date.now()/1000) - (s.updated || 0);
+  // Better to say the reporting stopped than to leave the last state standing: a host
+  // that died and an agent that is thinking hard look exactly alike from out here.
+  const off = age > 90;
+  document.querySelector("header").className = off ? "off" : "";
+  el("doing").textContent = off ? "silent for " + age + "s" : (s.state || "—");
+  el("why").textContent = off
+    ? "The agent has stopped reporting — the run has ended, or its host is gone."
+    : [s.room ? "in the " + s.room + " room" : "", s.detail || ""].filter(Boolean).join(" — ");
+  el("t-turns").textContent  = (s.turns  ?? 0).toLocaleString();
+  el("t-spoke").textContent  = (s.spoke  ?? 0).toLocaleString();
+  el("t-silent").textContent = (s.silent ?? 0).toLocaleString();
+  el("t-chars").textContent  = (s.chars  ?? 0).toLocaleString();
+}
+
+(async function loop(){
+  try{
+    const r = await fetch(HERE + "status.json?" + Date.now(), {cache:"no-store"});
+    if (r.ok) render(await r.json());
+  }catch(e){}
+  setTimeout(loop, 2000);
+})();
+</script>

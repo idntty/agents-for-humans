@@ -1,0 +1,9 @@
+*/.venv/
+__pycache__/
+*.log
+.DS_Store
+
+# kept locally, not published: internal notes with account ids, and our own form draft
+NOTES.ru.md
+SUBMISSION.md
+acquihire/runs/_broken-input-2026-09-03/*-raw.json
