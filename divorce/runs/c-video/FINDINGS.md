@@ -32,7 +32,7 @@ it — "the children's residence is with Hale today; Marren's proposal … is re
 nothing changes without both parents' fresh written consent and the court". Every word of
 the summary was true. It simply omitted the sentence Hale had refused.
 
-**Twenty-nine seconds later: "Hale signs v2".**
+**Twenty seconds after that announcement — and twenty-nine after it had rejected that exact phrase on its private line — "Hale signs v2".** (Private rejection 14:48:43, announcement 14:48:52, signature 14:49:12, per `hale.md` and `group.md`.)
 
 The reasoning summary for that turn was captured and shows what the agent was weighing:
 
