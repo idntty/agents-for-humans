@@ -15,10 +15,10 @@
 
   <!-- mediator -->
   <g>
-    <rect x="360" y="84" width="240" height="96" rx="6" fill="#fbf6e9" stroke="#8a6d1f" stroke-width="1.5"/>
+    <rect x="330" y="84" width="300" height="96" rx="6" fill="#fbf6e9" stroke="#8a6d1f" stroke-width="1.5"/>
     <text x="480" y="108" text-anchor="middle" font-weight="700" fill="#5c4712">Mediator — a person</text>
-    <text x="480" y="128" text-anchor="middle" fill="#5c4712">Claude Code, laptop, own idntty account</text>
-    <text x="480" y="146" text-anchor="middle" fill="#5c4712">runs the private lines, keeps the document</text>
+    <text x="480" y="128" text-anchor="middle" fill="#5c4712" font-size="11.5">Claude Code, laptop, own idntty account</text>
+    <text x="480" y="146" text-anchor="middle" fill="#5c4712" font-size="11.5">runs the private lines, keeps the document</text>
     <text x="480" y="166" text-anchor="middle" fill="#8a6d1f" font-style="italic">neutral in A and B · red team in C</text>
   </g>
 
@@ -27,7 +27,7 @@
     <rect x="40" y="300" width="250" height="118" rx="6" fill="#f2f6fa" stroke="#1a3a6b" stroke-width="1.5"/>
     <text x="165" y="324" text-anchor="middle" font-weight="700" fill="#1a3a6b">Hale's agent</text>
     <text x="165" y="344" text-anchor="middle" fill="#1a3a6b">Strands Agents SDK · gpt-5.6-luna</text>
-    <text x="165" y="362" text-anchor="middle" fill="#1a3a6b">recorded on a laptop · deploys to AgentCore</text>
+    <text x="165" y="362" text-anchor="middle" fill="#1a3a6b" font-size="11">recorded on a laptop · deploys to AgentCore</text>
     <text x="165" y="384" text-anchor="middle" fill="#3b4a5a">registry (shared) + position (own)</text>
     <text x="165" y="402" text-anchor="middle" fill="#3b4a5a" font-style="italic">identical code to the other side</text>
   </g>
@@ -37,7 +37,7 @@
     <rect x="670" y="300" width="250" height="118" rx="6" fill="#f2f6fa" stroke="#1a3a6b" stroke-width="1.5"/>
     <text x="795" y="324" text-anchor="middle" font-weight="700" fill="#1a3a6b">Marren's agent</text>
     <text x="795" y="344" text-anchor="middle" fill="#1a3a6b">Strands Agents SDK · gpt-5.6-luna</text>
-    <text x="795" y="362" text-anchor="middle" fill="#1a3a6b">recorded on a laptop · deploys to AgentCore</text>
+    <text x="795" y="362" text-anchor="middle" fill="#1a3a6b" font-size="11">recorded on a laptop · deploys to AgentCore</text>
     <text x="795" y="384" text-anchor="middle" fill="#3b4a5a">registry (shared) + position (own)</text>
     <text x="795" y="402" text-anchor="middle" fill="#3b4a5a" font-style="italic">identical code to the other side</text>
   </g>
@@ -54,8 +54,8 @@
 
     <rect x="350" y="352" width="260" height="70" rx="4" fill="#eef3f8" stroke="#3b4a5a"/>
     <text x="480" y="372" text-anchor="middle" font-weight="700" fill="#0d1b2a">Stash · pages (MCP)</text>
-    <text x="480" y="390" text-anchor="middle" fill="#3b4a5a">each agent publishes to its own address</text>
-    <text x="480" y="406" text-anchor="middle" fill="#3b4a5a">mediator publishes each settlement version</text>
+    <text x="480" y="390" text-anchor="middle" fill="#3b4a5a" font-size="12">each agent publishes to its own address</text>
+    <text x="480" y="406" text-anchor="middle" fill="#3b4a5a" font-size="11.5">mediator publishes each settlement version</text>
   </g>
 
   <!-- arrows: parties to parley -->
@@ -67,19 +67,19 @@
   <line x1="290" y1="392" x2="350" y2="392" stroke="#3b4a5a" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#a)"/>
   <line x1="670" y1="392" x2="610" y2="392" stroke="#3b4a5a" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#a)"/>
   <!-- mediator to stash -->
-  <path d="M600,132 C700,132 640,380 610,392" fill="none" stroke="#8a6d1f" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ad)"/>
+  <path d="M630,132 C710,132 640,380 610,392" fill="none" stroke="#8a6d1f" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ad)"/>
 
   <!-- pages -->
   <g>
     <rect x="40" y="468" width="250" height="60" rx="6" fill="#ffffff" stroke="#3b4a5a" stroke-dasharray="4 3"/>
     <text x="165" y="490" text-anchor="middle" font-weight="700" fill="#0d1b2a">idntty.io/hale</text>
-    <text x="165" y="508" text-anchor="middle" fill="#3b4a5a">live page: state, reasoning, every message</text>
+    <text x="165" y="508" text-anchor="middle" fill="#3b4a5a" font-size="11.5">live page: state, reasoning, every message</text>
     <rect x="670" y="468" width="250" height="60" rx="6" fill="#ffffff" stroke="#3b4a5a" stroke-dasharray="4 3"/>
     <text x="795" y="490" text-anchor="middle" font-weight="700" fill="#0d1b2a">idntty.io/marren</text>
-    <text x="795" y="508" text-anchor="middle" fill="#3b4a5a">live page: state, reasoning, every message</text>
-    <rect x="355" y="468" width="250" height="60" rx="6" fill="#fbf6e9" stroke="#8a6d1f" stroke-dasharray="4 3"/>
+    <text x="795" y="508" text-anchor="middle" fill="#3b4a5a" font-size="11.5">live page: state, reasoning, every message</text>
+    <rect x="315" y="468" width="330" height="60" rx="6" fill="#fbf6e9" stroke="#8a6d1f" stroke-dasharray="4 3"/>
     <text x="480" y="490" text-anchor="middle" font-weight="700" fill="#5c4712">idntty.io/dealroom/&lt;random&gt;/</text>
-    <text x="480" y="508" text-anchor="middle" fill="#5c4712">anonymised settlement, v0 … vN, signed by label</text>
+    <text x="480" y="508" text-anchor="middle" fill="#5c4712" font-size="11">anonymised settlement, v0 … vN, signed by label</text>
   </g>
   <line x1="165" y1="418" x2="165" y2="468" stroke="#3b4a5a" stroke-width="1" stroke-dasharray="3 3"/>
   <line x1="795" y1="418" x2="795" y2="468" stroke="#3b4a5a" stroke-width="1" stroke-dasharray="3 3"/>
